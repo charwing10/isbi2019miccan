@@ -287,13 +287,14 @@ def main():
     # training
     if args.train == True:
         for epoch in range(args.epoch):
-            scheduler.step()
 
             train_loss = train(trainloader, network, loss, optimizer, epoch, train_writer, device)
             train_writer.add_scalar("Aver loss", train_loss, epoch)
 
             val_loss = validate(validloder, network, loss, epoch, output_writers, device)
             val_writer.add_scalar('Aver loss', val_loss, epoch)
+
+            scheduler.step()
 
             if best_loss < 0:
                 best_loss = val_loss

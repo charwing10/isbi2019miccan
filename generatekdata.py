@@ -21,8 +21,8 @@ def gaussiansample(l, std, size):
     nums = nums.tolist()
     while len(nums)<size:
         new = np.random.choice(x, size = 1, p = prob) + mean
-        if new not in nums:
-            nums.append(new)
+        if new[0] not in nums:
+            nums.append(new[0])
     nums = np.asarray(nums)
     eightlowest = np.asarray([mean-3, mean-2, mean-1, mean, mean+1, mean+2, mean+3, mean+4], dtype=np.int)
     for i in range(len(eightlowest)):

@@ -6,8 +6,8 @@
 [Paper](https://arxiv.org/abs/1810.08229) is accepted by The IEEE International Symposium on Biomedical Imaging (ISBI) 2019
 
 ### Prerequisites
-python 3.6
-Pytorch 0.4.1
+python 3.7
+Pytorch 1.3
 
 ### Quick start
 Training: run main function with toy dataset
