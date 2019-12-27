@@ -15,7 +15,7 @@ class Percetual(nn.Module):
     def __init__(self):
         super(Percetual, self).__init__()
         self.select = ['3', '6', '8', '11']
-        self.vgg = models.vgg16(pretrained=True).features#.cuda().eval()
+        self.vgg = models.vgg16(pretrained=True).features.cuda().eval()
         for param in self.vgg.parameters():
             param.requires_grad = False
         self.l1 = nn.L1Loss()
